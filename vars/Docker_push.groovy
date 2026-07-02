@@ -7,8 +7,8 @@ def call(String credId,string imagename){
 
                     sh '''
                     echo "$dockerHubPass" | docker login -u "$dockerHubUser" --password-stdin
-                    docker tag '${imagename}' $dockerHubUser/'${imagename}'
-                    docker push $dockerHubUser/'${imagename}':latest
+                    docker tag ${imagename} $dockerHubUser/${imagename}
+                    docker push $dockerHubUser/${imagename}:latest
                     '''
                 }
 }
